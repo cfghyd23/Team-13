@@ -45,3 +45,20 @@ export const createBloodBankController = async (req, res) => {
     });
   }
 };
+
+export const getBloodBankController = async (req, res) => {
+  try {
+    const bloodBanks = await bloodBankModel.find({});
+    res.status(200).send({
+      success: true,
+      message: "All blood banks",
+      bloodBanks,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in getting bloodbank",
+    });
+  }
+};
