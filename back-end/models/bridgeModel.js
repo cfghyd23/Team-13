@@ -12,7 +12,11 @@ const bridgeSchema = new mongoose.Schema({
   ],
   location: {
     type: mongoose.ObjectId,
-    ref: "users",
+    ref: "bloodbank",
+  },
+  index: {
+    type: Number,
+    default: 0,
   },
 });
 

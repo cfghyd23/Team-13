@@ -1,4 +1,3 @@
-const jwtSecret = "CFG_BloodWarriors";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 import userModel from "../models/userModel.js";
@@ -29,7 +28,7 @@ export const loginController = async (req, res) => {
         id: userdata.id,
       },
     };
-    const authToken = jwt.sign(data, jwtSecret);
+    const authToken = jwt.sign(data, process.env.jwtSecret);
     return res.json({ success: true, authToken: authToken });
   } catch (error) {
     console.log(error);

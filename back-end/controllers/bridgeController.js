@@ -37,3 +37,20 @@ export const bridgeCreateController = async (req, res) => {
     });
   }
 };
+
+export const getBridgeController = async (req, res) => {
+  try {
+    const bridges = await bridgeModel.find({});
+    res.status(200).send({
+      success: true,
+      message: "All blood banks",
+      bridges,
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "Error in getting bloodbank",
+    });
+  }
+};

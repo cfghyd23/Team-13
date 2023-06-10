@@ -1,8 +1,13 @@
 import express from "express";
-import { bridgeCreateController } from "../controllers/bridgeController.js";
+import {
+  bridgeCreateController,
+  getBridgeController,
+} from "../controllers/bridgeController.js";
 
 const router = express.Router();
 
 router.post("/createbridge", bridgeCreateController);
+
+router.get("/", getBridgeController);
 
 export default router;
