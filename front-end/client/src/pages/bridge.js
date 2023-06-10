@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Card, Slider, ReqDonor } from components
+import Card from "./components/Card";
+import Navbar from "./components/Navbar";
+import ReqDonor from "./components/ReqDonor";
+import Slider from "./components/Slider";
 
 
 export default function home() {
