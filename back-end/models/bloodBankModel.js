@@ -1,20 +1,15 @@
 import mongoose from "mongoose";
-const userSchema = new mongoose.Schema({
+const bloodBankSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    trim: true,
   },
   email: {
     type: String,
     required: true,
     unique: true,
   },
-  password: {
-    type: String,
-    required: true,
-  },
-  address: {
+  location: {
     type: String,
     required: true,
   },
@@ -22,10 +17,12 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  group: {
-    type: String,
-    required: true,
-  },
+  bloodAvailable: [
+    {
+      bloodGroup: String,
+      quantity: Number,
+    },
+  ],
 });
 
-export default mongoose.model("users", userSchema);
+export default mongoose.model("bloodbank", bloodBankSchema);

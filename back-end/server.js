@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import authRoute from "./routes/Auth.js";
 import bridgeRoute from "./routes/bridgeRoute.js";
+import bloodBankRoute from "./routes/bloodBankRoute.js";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(morgan("dev"));
 
 app.use("/auth", authRoute);
 app.use("/bridge", bridgeRoute);
+app.use("/bloodbank", bloodBankRoute);
 
 app.listen(8000, () => {
   console.log(`server is running on port 8000`);
