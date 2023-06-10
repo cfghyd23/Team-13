@@ -57,8 +57,8 @@ export const createController = async (req, res) => {
       name,
       email,
       password: secPassword,
-      phone,
       address,
+      phone,
       group,
     }).save();
 

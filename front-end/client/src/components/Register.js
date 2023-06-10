@@ -101,9 +101,11 @@ const Register = () => {
                     type="text"
                     id="typeEmailX-2"
                     className="form-control form-control-lg"
-                    placeholder="Address"
+                    placeholder="Blood Group"
                     value={group}
-                    onChange={(e) => setGroup(e.target.group)}
+                    onChange={(e) => {
+                      setGroup(e.target.value);
+                    }}
                   />
                 </div>
                 <button
