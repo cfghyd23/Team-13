@@ -1,6 +1,6 @@
 const navbarItems = [
     {
-      title: "About",
+      title: "About", 
       link: "/about",
     },
     {
@@ -10,6 +10,10 @@ const navbarItems = [
     {
       title: "Collaboration",
       link: "/collaboration",
+    },
+    {
+      title: "Login",
+      link: "/login",
     },
   ];
   
