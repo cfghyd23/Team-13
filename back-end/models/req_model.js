@@ -1,12 +1,17 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
-  name: {
-    type: String,
+const requestSchema = new mongoose.Schema({
+  patient: {
+    type: mongoose.ObjectId,
     required: true,
-    trim: true,
+    ref: "users",
   },
-  group: {
+  hospital: {
+    type: mongoose.ObjectId,
+    required: true,
+    ref: "bloodbank",
+  },
+  bloodGroup: {
     type: String,
     required: true,
   },
@@ -14,14 +19,12 @@ const userSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  location: {
-    type: String,
-    required: true,
-  },
-  pids: [{
-    type: Number, 
-    required: true,
-  }],
+  donors: [
+    {
+      type: mongoose.ObjectId,
+      ref: "users",
+    },
+  ],
 });
 
-export default mongoose.model("users", userSchema);
+export default mongoose.model("requests", requestSchema);
