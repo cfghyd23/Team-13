@@ -27,7 +27,8 @@ const Login = () => {
           user: data.user,
         });
         toast.success("Login successful!");
-        navigate("/homepage");
+        if (data.newUser.email === "admin@admin.com") navigate("/admin");
+        else navigate("/homepage");
       } else {
         toast.error(data.message);
       }
