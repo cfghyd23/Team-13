@@ -4,6 +4,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import HomePage from "./components/Homepage";
 import Admin from "./components/Admin";
+import "./App.css";
+
 function App() {
   return (
     <>
