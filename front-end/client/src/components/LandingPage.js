@@ -15,6 +15,7 @@ function LandingPage(){
     ],
   };
   return (
+    
     <div className="landing-page">
       <header className="header">
         <h1>Welcome to the Blood Donation Platform</h1>

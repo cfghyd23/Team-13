@@ -4,6 +4,7 @@
     justify-content: center;
     height: 100vh;
     background-color: #f2f2f2;
+    margin-top: 10rem;
   }
   .carousel-buttons {
     display: flex;
@@ -13,7 +14,7 @@
   
   .header {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
   }
   
   .header h1 {
@@ -26,7 +27,8 @@
   }
 
   .font-style{
-    font-size: 2rem;
+    font-size: 4rem;
+  
   }
   
   .cta-button {
