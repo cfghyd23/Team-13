@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useAuth } from "../context/auth";
+import "../styles/AuthStyles.css";
 
 const Login = () => {
   const [email, setEmail] = React.useState("");
@@ -38,7 +39,7 @@ const Login = () => {
   };
 
   return (
-    <section className="vh-100" style={{ backgroundColor: "#508bfc" }}>
+    <section className="form-container">
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-12 col-md-8 col-lg-6 col-xl-5">
