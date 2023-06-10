@@ -10,32 +10,32 @@ const Login = () => {
   const navigate = useNavigate();
   const { auth, setAuth } = useAuth();
 
-  //   const handleLogin = async (e) => {
-  //     e.preventDefault();
-  //     try {
-  //       const response = await axios.post(
-  //         "http://localhost:8000/api/auth/login",
-  //         {
-  //           email,
-  //           password,
-  //         }
-  //       );
-  //       const { data } = response;
-  //       if (data.success) {
-  //         setAuth({
-  //           ...auth,
-  //           user: data.user,
-  //         });
-  //         toast.success("Login successful!");
-  //         navigate("/homepage");
-  //       } else {
-  //         toast.error(data.message);
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //       toast.error("Something went wrong..");
-  //     }
-  //   };
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/auth/loginuser",
+        {
+          email,
+          password,
+        }
+      );
+      const { data } = response;
+      if (data.success) {
+        setAuth({
+          ...auth,
+          user: data.user,
+        });
+        toast.success("Login successful!");
+        navigate("/homepage");
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong..");
+    }
+  };
 
   return (
     <section className="vh-100" style={{ backgroundColor: "#508bfc" }}>
@@ -71,7 +71,7 @@ const Login = () => {
                 <button
                   className="btn btn-primary btn-lg btn-block w-100 p-2"
                   type="submit"
-                  //onClick={handleLogin}
+                  onClick={handleLogin}
                 >
                   Login
                 </button>

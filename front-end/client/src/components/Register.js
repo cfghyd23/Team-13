@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/auth";
 import toast from "react-hot-toast";
 import axios from "axios";
 const Register = () => {
@@ -9,31 +8,32 @@ const Register = () => {
   const [name, setName] = React.useState("");
   const [address, setAddress] = React.useState("");
   const [phone, setPhone] = React.useState("");
+  const [group, setGroup] = React.useState("");
   const navigate = useNavigate();
-  const { auth, setAuth } = useAuth();
 
-  //   const handleRegister = async (e) => {
-  //     e.preventDefault();
-  //     try {
-  //       const response = await axios.post(
-  //         "http://localhost:8000/api/auth/register",
-  //         {
-  //           name,
-  //           email,
-  //           password,
-  //           address,
-  //           phone,
-  //         }
-  //       );
-  //       if (response.data.success) {
-  //         toast.success(response.data.message);
-  //         navigate("/");
-  //       } else toast.error(response.data.message);
-  //     } catch (error) {
-  //       console.log(error);
-  //       toast.error("Something went wrong..");
-  //     }
-  //   };
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:8000/auth/createuser",
+        {
+          name,
+          email,
+          password,
+          address,
+          phone,
+          group,
+        }
+      );
+      if (response.data.success) {
+        toast.success(response.data.message);
+        navigate("/");
+      } else toast.error(response.data.message);
+    } catch (error) {
+      console.log(error);
+      toast.error("Something went wrong..");
+    }
+  };
 
   return (
     <section className="vh-100" style={{ backgroundColor: "#508bfc" }}>
@@ -96,10 +96,20 @@ const Register = () => {
                     onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
+                <div className="form-outline mb-4">
+                  <input
+                    type="text"
+                    id="typeEmailX-2"
+                    className="form-control form-control-lg"
+                    placeholder="Address"
+                    value={group}
+                    onChange={(e) => setGroup(e.target.group)}
+                  />
+                </div>
                 <button
                   className="btn btn-primary btn-lg btn-block w-100 p-2"
                   type="submit"
-                  //onClick={handleRegister}
+                  onClick={handleRegister}
                 >
                   Register
                 </button>
