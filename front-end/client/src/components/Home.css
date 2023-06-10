@@ -1,0 +1,45 @@
+.home {
+    padding: 2rem;
+  }
+  
+  .importance-section {
+    margin-bottom: 2rem;
+  }
+  
+  .importance-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .importance-section p {
+    margin-bottom: 1.5rem;
+  }
+  
+  .donate-button {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .donate-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .graph-section {
+    text-align: center;
+  }
+  
+  .graph-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .chart-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
