@@ -1,7 +1,7 @@
 import React from 'react';
-import './LandingPage.css';
 import { Bar } from 'react-chartjs-2';
-import './Home.css';
+import '../style/LandingPage.css';
+import '../style/Home.css';
 import Chart from 'chart.js/auto';
 function LandingPage(){
   const bloodDonationData = {
@@ -19,7 +19,12 @@ function LandingPage(){
       <header className="header">
         <h1>Welcome to the Blood Donation Platform</h1>
         <p>Donate blood, save lives!</p>
-        <button className="cta-button">Get Started</button>
+        <div className='font-style'>
+        An online platform for the Blood Warriors Foundation, a registered NGO dedicated to empowering the community and breaking the stigmas surrounding blood donation for Thalassemia patients. 
+        </div>
+        
+        <button className="cta-button">Donate Now</button>
+        <button className="cta-button">Request </button>
       </header>
       <section className="features">
         <div className="feature">
@@ -44,7 +49,7 @@ function LandingPage(){
           various medical conditions, such as accidents, surgeries, anemia, and chronic diseases.
           By donating blood, you contribute to the well-being and recovery of countless individuals.
         </p>
-        <button className="donate-button">Donate Now</button>
+        {/* <button className="donate-button">Donate Now</button> */}
       </section>
 
       <section className="graph-section">
@@ -54,9 +59,6 @@ function LandingPage(){
         </div>
       </section>
     </div>
-      <footer className="footer">
-        <p>&copy; 2023 Blood Donation Platform. All rights reserved.</p>
-      </footer>
     </div>
   );
 };
