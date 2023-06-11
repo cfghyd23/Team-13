@@ -1,7 +1,7 @@
 import { BellFilled, MailOutlined } from "@ant-design/icons";
 import { Badge, Drawer, Image, List, Space, Typography } from "antd";
 import { useEffect, useState } from "react";
-import { getComments, getOrders } from "../../API";
+import { getComments, getOrders } from "../API";
 
 function AppHeader() {
   const [comments, setComments] = useState([]);
@@ -72,7 +72,7 @@ function AppHeader() {
             return (
               <List.Item>
                 <Typography.Text strong>{item.title}</Typography.Text> has been
-                ordered!
+                requested for Blood!!
               </List.Item>
             );
           }}

@@ -3,6 +3,7 @@ const router = express.Router();
 import {
   loginController,
   createController,
+  countController,
 } from "../controllers/loginCntrl.js";
 
 import { body, validationResult } from "express-validator";
@@ -20,5 +21,7 @@ router.post(
   body("email", "enter a valid email").isEmail(),
   loginController
 );
+
+router.get("/total-count", countController);
 
 export default router;

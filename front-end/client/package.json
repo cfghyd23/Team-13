@@ -20,7 +20,9 @@
     "react-icons": "^4.9.0",
     "react-router-dom": "^6.12.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@ant-design/icons": "^4.8.0",
+    "antd": "^5.1.2"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -72,3 +72,21 @@ export const createController = async (req, res) => {
     res.json({ success: false });
   }
 };
+
+export const countController = async (req, res) => {
+  try {
+    const total = userModel.find({}).estimatedDocumentCount();
+    res.status(200).send({
+      success: "true",
+      total,
+      message: "count received successfully ",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      message: "Error in user count",
+      error,
+      success: false,
+    });
+  }
+};
