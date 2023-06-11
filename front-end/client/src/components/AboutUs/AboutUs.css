@@ -1,6 +1,9 @@
 /* AboutUs.css */
 .about-us {
+  display: flex;
+  justify-content: center;
     padding: 40px;
+    font-size: 3rem;
   }
   
   .about-us-content {
