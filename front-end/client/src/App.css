@@ -74,3 +74,44 @@ border-top: 1px solid rgba(0, 0, 0, 0.15);
 .PageContent{
     padding-left: 12px;
 }
+
+
+
+   
+ .row{
+    background-color: rgb(175, 121, 121);
+}
+  
+
+ .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+
+  .grid-item{
+    width:12rem; 
+    height: 14rem;
+    border: 2px solid black;
+    font-size: 12px;
+    margin: 50px;
+    padding: 10px;
+    background-color: rgb(194, 178, 178);
+    box-shadow: 5px 5px;
+   
+  }
+
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+
+  img{
+    
+    width:2rem;
+    height:2rem;
+    float:right;
+    border-radius: 50%;
+  }
