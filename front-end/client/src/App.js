@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import home from "./pages/bridge.js";
+// import home from "./pages/bridge.js";
 import Admin from "./components/Admin.js";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar.js";
