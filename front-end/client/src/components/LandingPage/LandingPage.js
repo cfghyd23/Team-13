@@ -3,8 +3,9 @@ import { Bar } from 'react-chartjs-2';
 import './LandingPage.css';
 import './Home.css';
 import Navbar from '../Navbar/Navbar'
-import Chart from 'chart.js/auto';
+
 import AppFooter from '../AppFooter';
+import Layout from '../../Layout';
 
 
 function LandingPage(){
@@ -19,13 +20,7 @@ function LandingPage(){
     ],
   };
   return (
-<div>
-
-
-    <div>
-    <Navbar/>
-    </div>
-    
+<Layout>    
     <div className="landing-page">
       <header className="header">
         <h1>Welcome to the Blood Donation Platform</h1>
@@ -65,14 +60,12 @@ function LandingPage(){
 
       <section className="graph-section">
         <h2>Blood Donation Statistics in India</h2>
-        <div className="chart-container">
-          <Bar data={bloodDonationData} />
-        </div>
+      
       </section>
     </div>
     </div>
     
-    </div>
+    </Layout>
   );
 };
 

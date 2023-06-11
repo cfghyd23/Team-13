@@ -9,6 +9,7 @@ import Admin from "./components/Admin";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import LandingPage from "./components/LandingPage/LandingPage";
+import AboutUs from "./components/AboutUs/AboutUs";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/bridge" element={<bridge />} />
         <Route path="/register" element={<Register />} />
-        
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/admin" element={<Admin />} />
       </Routes>
     </>
