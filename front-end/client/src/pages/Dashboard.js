@@ -6,7 +6,8 @@ import {
 } from "@ant-design/icons";
 import { Card, Space, Statistic, Table, Typography } from "antd";
 import { useEffect, useState } from "react";
-import { getCustomers, getInventory, getOrders, getRevenue } from "../../API";
+import { getCustomers, getInventory, getOrders, getRevenue } from "../API";
+import { Bar } from 'react-chartjs-2';
 
 import {
   Chart as ChartJS,
@@ -17,7 +18,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
+
 
 ChartJS.register(
   CategoryScale,

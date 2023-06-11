@@ -1,0 +1,41 @@
+/* AboutUs.css */
+.about-us {
+    padding: 40px;
+  }
+  
+  .about-us-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .text-container {
+    margin-bottom: 20px;
+  }
+  
+  .image-container {
+    margin-top: 20px;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  @media (min-width: 768px) {
+    .about-us-content {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  
+    .text-container {
+      margin-right: 20px;
+    }
+  
+    .image-container {
+      margin-top: 0;
+    }
+  }
+  
