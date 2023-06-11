@@ -1,6 +1,6 @@
 
 import "../App.css";
-import AppFooter from "./AppFooter/Footer";
+import AppFooter from "./AppFooter";
 import AppHeader from "./AppHeader";
 import PageContent from "./PageContent";
 import SideMenu from "./SideMenu";

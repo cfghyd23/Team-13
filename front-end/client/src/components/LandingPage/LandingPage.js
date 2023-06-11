@@ -4,7 +4,7 @@ import './LandingPage.css';
 import './Home.css';
 import Navbar from '../Navbar/Navbar'
 import Chart from 'chart.js/auto';
-import { Footer } from '../AppFooter/Footer';
+import AppFooter from '../AppFooter';
 
 
 function LandingPage(){
@@ -71,7 +71,7 @@ function LandingPage(){
       </section>
     </div>
     </div>
-    <Footer/>
+    
     </div>
   );
 };
