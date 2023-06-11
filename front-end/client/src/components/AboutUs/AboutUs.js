@@ -1,10 +1,11 @@
 import React from 'react';
-import '../style/AboutUs.css';
-
+import './AboutUs.css';
+import Layout from '../../Layout.js';
 
 const AboutUs = () => {
   return (
-    <div className="about-us">
+    <Layout>
+      <div className="about-us">
       <div className="about-us-content">
         <div className="text-container">
           <h2>Who are we?</h2>
@@ -21,6 +22,8 @@ const AboutUs = () => {
         </div> */}
       </div>
     </div>
+    </Layout>
+    
   );
 };
 
