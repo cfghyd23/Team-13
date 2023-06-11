@@ -1,8 +1,8 @@
 import React from 'react';
-import '../style/EligibilityCriteria.css';
+import './EligibilityCriteria.css';
 
-import Navbar from './Navbar'
-import Footer from './Footer';
+import Navbar from './components/Navbar/Navbar'
+import AppFooter from './components/AppFooter';
 
 const EligibilityCriteria = () => {
   return (
@@ -27,7 +27,7 @@ const EligibilityCriteria = () => {
       </ul>
     </div>
     <div>
-    <Footer/>
+    <AppFooter/>
     </div>
     
     </div>
