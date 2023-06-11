@@ -4,6 +4,7 @@ import {
   loginController,
   createController,
   countController,
+  getId,
 } from "../controllers/loginCntrl.js";
 
 import { body, validationResult } from "express-validator";
@@ -23,5 +24,7 @@ router.post(
 );
 
 router.get("/total-count", countController);
+
+router.post("/getid", getId);
 
 export default router;

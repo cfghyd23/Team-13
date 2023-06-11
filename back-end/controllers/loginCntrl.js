@@ -29,7 +29,7 @@ export const loginController = async (req, res) => {
       },
     };
     const authToken = jwt.sign(data, process.env.jwtSecret);
-    return res.json({ success: true, authToken: authToken });
+    return res.json({ success: true, userdata });
   } catch (error) {
     console.log(error);
     res.json({ success: false });
@@ -88,5 +88,18 @@ export const countController = async (req, res) => {
       error,
       success: false,
     });
+  }
+};
+
+export const getId = async (req, res) => {
+  try {
+    const { email } = req.body;
+    console.log(email);
+    const user = await userModel.findOne({ email: email });
+    console.log(user);
+    res.status(200).send({id: user._id})
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ success: false });
   }
 };

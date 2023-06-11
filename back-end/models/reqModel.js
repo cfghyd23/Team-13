@@ -7,11 +7,6 @@ const reqSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
-  hospital: {
-    type: mongoose.ObjectId,
-    ref: "bloodbank",
-    required: true,
-  },
   quantity: {
     type: Number,
     required: true,

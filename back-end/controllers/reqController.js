@@ -1,17 +1,19 @@
 import reqModel from "../models/reqModel.js";
+import userModel from "../models/userModel.js";
 
 export const createReqController = async (req, res) => {
-  const { patient, hospital, quantity } = req.body;
+  const { patient, quantity } = req.body;
+  console.log(patient);
   if (!patient) {
     res.status(400).send({ message: "patient is required" });
-  }
-  if (!hospital) {
-    res.status(400).send({ message: "hospital is required" });
   }
   if (!quantity) {
     res.status(400).send({ message: "quantity is required" });
   }
   try {
+    const userReq = await userModel.findOne({ email: patient });
+
+    console.log(userReq);
     const existingReq = await reqModel.findOne({ patient: patient });
     if (existingReq) {
       res.status(200).send({
@@ -22,10 +24,9 @@ export const createReqController = async (req, res) => {
 
     const newReq = await new reqModel({
       patient,
-      hospital,
       quantity,
     }).save();
-
+    console.log("hello");
     res.status(201).send({
       success: true,
       message: "Req created",
