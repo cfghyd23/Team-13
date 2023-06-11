@@ -13,22 +13,26 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
+      const { data } = await axios.post(
         "http://localhost:8000/auth/loginuser",
         {
           email,
           password,
         }
       );
-      const { data } = response;
+      console.log(data);
       if (data.success) {
+        console.log(data.userdata);
         setAuth({
           ...auth,
           user: data.user,
         });
         toast.success("Login successful!");
-        if (data.newUser.email === "admin@admin.com") navigate("/admin");
-        else navigate("/homepage");
+        if (data?.userdata?.email === "admin@admin.com") {
+          navigate("/admin");
+        } else {
+          navigate("/homepage");
+        }
       } else {
         toast.error(data.message);
       }
