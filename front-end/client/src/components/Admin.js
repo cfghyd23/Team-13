@@ -1,8 +1,9 @@
+
 import "../App.css";
-import AppFooter from "./AppFooter.js";
-import AppHeader from "./AppHeader.js";
-import PageContent from "./PageContent.js";
-import SideMenu from "./SideMenu.js";
+import AppFooter from "./AppFooter";
+import AppHeader from "./AppHeader";
+import PageContent from "./PageContent";
+import SideMenu from "./SideMenu";
 const Admin = () => {
   return (
     <div className="App">
