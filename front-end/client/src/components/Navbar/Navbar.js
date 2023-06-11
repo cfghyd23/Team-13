@@ -17,9 +17,9 @@ const Navbar = ({ toggle }) => {
           </Link>
         ))}
       </div>
-        <div className="mobile-menu-icon">
-          <FaBars onClick={toggle} />
-        </div>
+      <div className="mobile-menu-icon">
+        <FaBars onClick={toggle} />
+      </div>
     </nav>
   );
 };
