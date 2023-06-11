@@ -71,7 +71,6 @@ function LandingPage(){
 
       <section className="graph-section">
       <div style={{ width: '800px', height: '400px' }} className="graph-container">
-      <h2 style={{justifyContent:'flex'}}>Indian Donors Over the Years</h2>
       <Line data={data} />
     </div>
       
