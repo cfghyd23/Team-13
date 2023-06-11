@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Customers from "../../Pages/Customers";
-import Dashboard from "../../Pages/Dashbaord";
-import Inventory from "../../Pages/Inventory";
-import Orders from "../../Pages/Orders";
+import Customers from "../../pages/Customers";
+import Dashboard from "../../pages/Dashboard";
+import Inventory from "../../pages/Inventory";
+import Orders from "../../pages/Orders";
 
 function AppRoutes() {
   return (

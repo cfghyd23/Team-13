@@ -1,6 +1,6 @@
 import { Avatar, Rate, Space, Table, Typography } from "antd";
 import { useEffect, useState } from "react";
-import { getCustomers, getInventory } from "../../API";
+import { getCustomers, getInventory } from "../API";
 
 function Customers() {
   const [loading, setLoading] = useState(false);

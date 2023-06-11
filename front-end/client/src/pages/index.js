@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
-import Navbar from components
+// import React, { useEffect, useState } from "react";
+// import Navbar from components
 
 
     
 
-export default function home() {
-  return (
-    <div>
-      <Navbar> </Navbar>
+// export default function home() {
+//   return (
+//     <div>
+//       <Navbar> </Navbar>
 
 
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
 

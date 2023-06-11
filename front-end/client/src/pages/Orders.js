@@ -1,14 +1,14 @@
 import { Avatar, Rate, Space, Table, Typography } from "antd";
 import { useEffect, useState } from "react";
-import { getInventory } from "../../API";
+import { getInventory, getOrders } from "../API";
 
-function Inventory() {
+function Orders() {
   const [loading, setLoading] = useState(false);
   const [dataSource, setDataSource] = useState([]);
 
   useEffect(() => {
     setLoading(true);
-    getInventory().then((res) => {
+    getOrders().then((res) => {
       setDataSource(res.products);
       setLoading(false);
     });
@@ -16,17 +16,10 @@ function Inventory() {
 
   return (
     <Space size={20} direction="vertical">
-      <Typography.Title level={4}>Inventory</Typography.Title>
+      <Typography.Title level={4}>Orders</Typography.Title>
       <Table
         loading={loading}
         columns={[
-          {
-            title: "Thumbnail",
-            dataIndex: "thumbnail",
-            render: (link) => {
-              return <Avatar src={link} />;
-            },
-          },
           {
             title: "Title",
             dataIndex: "title",
@@ -37,24 +30,17 @@ function Inventory() {
             render: (value) => <span>${value}</span>,
           },
           {
-            title: "Rating",
-            dataIndex: "rating",
-            render: (rating) => {
-              return <Rate value={rating} allowHalf disabled />;
-            },
+            title: "DiscountedPrice",
+            dataIndex: "discountedPrice",
+            render: (value) => <span>${value}</span>,
           },
           {
-            title: "Stock",
-            dataIndex: "stock",
-          },
-
-          {
-            title: "Brand",
-            dataIndex: "brand",
+            title: "Quantity",
+            dataIndex: "quantity",
           },
           {
-            title: "Category",
-            dataIndex: "category",
+            title: "Total",
+            dataIndex: "total",
           },
         ]}
         dataSource={dataSource}
@@ -65,4 +51,4 @@ function Inventory() {
     </Space>
   );
 }
-export default Inventory;
+export default Orders;
