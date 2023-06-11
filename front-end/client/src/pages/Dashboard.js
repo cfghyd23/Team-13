@@ -7,10 +7,10 @@ import {
 import { Card, Space, Statistic, Table, Typography } from "antd";
 import { useEffect, useState } from "react";
 import { getCustomers, getInventory, getOrders, getRevenue } from "../API";
-import { Bar } from 'react-chartjs-2';
+import { Bar } from "react-chartjs-2";
 
 import {
-  Chart as ChartJS,
+  Chart,
   CategoryScale,
   LinearScale,
   BarElement,
@@ -19,15 +19,7 @@ import {
   Legend,
 } from "chart.js";
 
-
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function Dashboard() {
   const [orders, setOrders] = useState(0);
@@ -54,7 +46,7 @@ function Dashboard() {
       <Space direction="horizontal">
         <DashboardCard
           icon={
-            <ShoppingCartOutlined
+            <UserOutlined
               style={{
                 color: "green",
                 backgroundColor: "rgba(0,255,0,0.25)",
@@ -64,12 +56,12 @@ function Dashboard() {
               }}
             />
           }
-          title={"Orders"}
+          title={"Patients"}
           value={orders}
         />
         <DashboardCard
           icon={
-            <ShoppingOutlined
+            <UserOutlined
               style={{
                 color: "blue",
                 backgroundColor: "rgba(0,0,255,0.25)",
@@ -79,7 +71,7 @@ function Dashboard() {
               }}
             />
           }
-          title={"Inventory"}
+          title={"Donors"}
           value={inventory}
         />
         <DashboardCard
@@ -94,7 +86,7 @@ function Dashboard() {
               }}
             />
           }
-          title={"Customer"}
+          title={"Organisations"}
           value={customers}
         />
         <DashboardCard
@@ -109,7 +101,7 @@ function Dashboard() {
               }}
             />
           }
-          title={"Revenue"}
+          title={"Donations"}
           value={revenue}
         />
       </Space>
@@ -137,10 +129,20 @@ function RecentOrders() {
 
   useEffect(() => {
     setLoading(true);
-    getOrders().then((res) => {
-      setDataSource(res.products.splice(0, 3));
-      setLoading(false);
-    });
+    fetch("https://dummyjson.com/users")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data); // Check the structure of the data
+        const users = data.users.slice(0, 4); // Access the 'users' array
+        const formattedData = users.map((user) => ({
+          key: user.id,
+          firstName: user.firstName,
+          email: user.email,
+          bloodGroup: user.bloodGroup,
+        }));
+        setDataSource(formattedData);
+        setLoading(false);
+      });
   }, []);
 
   return (
@@ -149,16 +151,16 @@ function RecentOrders() {
       <Table
         columns={[
           {
-            title: "Title",
-            dataIndex: "title",
+            title: "Username",
+            dataIndex: "firstName",
           },
           {
-            title: "Quantity",
-            dataIndex: "quantity",
+            title: "Email",
+            dataIndex: "email",
           },
           {
-            title: "Price",
-            dataIndex: "discountedPrice",
+            title: "Blood Group",
+            dataIndex: "bloodGroup",
           },
         ]}
         loading={loading}

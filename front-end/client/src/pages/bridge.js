@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import Card from "../components/Card.js";
-import Navbar from "../components/Navbar.js";
+import Navbar from "../components/Navbar/Navbar.js";
 import ReqDonor from "../components/ReqDonor.js";
 import Slider from "../components/Slider.js";
 
