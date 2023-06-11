@@ -1,0 +1,47 @@
+/* EligibilityCriteria.css */
+.eligibility-criteria {
+    padding: 40px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    color: #666;
+  }
+  
+  li:before {
+    content: '•';
+    display: inline-block;
+    color: #ff5e5e;
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    .eligibility-criteria {
+      padding: 30px;
+    }
+  
+    h2 {
+      font-size: 20px;
+    }
+  
+    li:before {
+      font-size: 14px;
+    }
+  }
+  
